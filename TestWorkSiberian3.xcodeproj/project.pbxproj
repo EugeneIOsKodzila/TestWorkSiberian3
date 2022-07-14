@@ -14,6 +14,7 @@
 		6E7E25A0287EFA5200F15A9D /* TestWorkSiberian3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E259E287EFA5200F15A9D /* TestWorkSiberian3.xcdatamodeld */; };
 		6E7E25A2287EFA5500F15A9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E25A1287EFA5500F15A9D /* Assets.xcassets */; };
 		6E7E25A5287EFA5500F15A9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7E25A3287EFA5500F15A9D /* LaunchScreen.storyboard */; };
+		6E7E25AF287F161A00F15A9D /* SpeechToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7E25AE287F161A00F15A9D /* SpeechToTextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6E7E25A1287EFA5500F15A9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E7E25A4287EFA5500F15A9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E7E25A6287EFA5500F15A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E7E25AE287F161A00F15A9D /* SpeechToTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				6E7E2597287EFA5100F15A9D /* SceneDelegate.swift */,
 				6E7E2599287EFA5100F15A9D /* ViewController.swift */,
 				6E7E259B287EFA5100F15A9D /* Main.storyboard */,
+				6E7E25AE287F161A00F15A9D /* SpeechToTextViewController.swift */,
 				6E7E25A1287EFA5500F15A9D /* Assets.xcassets */,
 				6E7E25A3287EFA5500F15A9D /* LaunchScreen.storyboard */,
 				6E7E25A6287EFA5500F15A9D /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7E25AF287F161A00F15A9D /* SpeechToTextViewController.swift in Sources */,
 				6E7E259A287EFA5100F15A9D /* ViewController.swift in Sources */,
 				6E7E25A0287EFA5200F15A9D /* TestWorkSiberian3.xcdatamodeld in Sources */,
 				6E7E2596287EFA5100F15A9D /* AppDelegate.swift in Sources */,
