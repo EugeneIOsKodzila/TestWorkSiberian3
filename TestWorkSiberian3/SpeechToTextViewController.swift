@@ -28,12 +28,13 @@ class SpeechToTextViewController: UIViewController {
             recordButton.setTitle("Остановить запись", for: .normal)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         recordButton.isEnabled = false
         speechRecognizer?.delegate = self
-        SFSpeechRecognizer.requestAuthorization { status in
+        SFSpeechRecognizer.requestAuthorization { [weak self] status in
             var buttonState = false
             switch status {
             case .notDetermined:
@@ -52,7 +53,7 @@ class SpeechToTextViewController: UIViewController {
                 fatalError()
             }
             DispatchQueue.main.async {
-                self.recordButton.isEnabled = buttonState
+                self?.recordButton.isEnabled = buttonState
             }
         }
     }
@@ -75,27 +76,25 @@ class SpeechToTextViewController: UIViewController {
             fatalError("Не могу создать экземпляр запроса")
         }
         recognitionRequest.shouldReportPartialResults = true
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { result, error in
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { [weak self] result, error in
             var isFinal = false
-            if result != nil {
-                self.textField.text = result?.bestTranscription.formattedString
-                isFinal = (result?.isFinal)!
+            if let result = result {
+                self?.textField.text = result.bestTranscription.formattedString
+                isFinal = result.isFinal
             }
             if error != nil || isFinal {
-                self.audioEngine.stop()
+                self?.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-                
-                self.recordButton.isEnabled = true
+                self?.recognitionRequest = nil
+                self?.recognitionTask = nil
+                self?.recordButton.isEnabled = true
             }
         })
         let format = inputNode.outputFormat(forBus: 0)
         
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: format) {
-            buffer, _ in
-            self.recognitionRequest?.append(buffer)
+            [weak self] buffer, _ in
+            self?.recognitionRequest?.append(buffer)
         }
         audioEngine.prepare()
         do {
@@ -109,10 +108,6 @@ class SpeechToTextViewController: UIViewController {
 
 extension SpeechToTextViewController: SFSpeechRecognizerDelegate {
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        if available {
-            recordButton.isEnabled = true
-        } else {
-            recordButton.isEnabled = false
-        }
+        recordButton.isEnabled = available
     }
 }
