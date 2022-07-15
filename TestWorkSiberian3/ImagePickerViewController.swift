@@ -10,20 +10,16 @@ import UIKit
 class ImagePickerViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func showImagePicker(_ sender: UIButton) {
         showImagePickerControllerActionSheet()
     }
-
 }
 
 extension ImagePickerViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    
     func showImagePickerControllerActionSheet() {
         let photoLibraryAction = UIAlertAction(title: "Выбрать из галереи", style: .default) { (action) in
             self.showImagePickerController(sourceType: .photoLibrary)
