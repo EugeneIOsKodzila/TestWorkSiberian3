@@ -24,68 +24,90 @@
             </objects>
             <point key="canvasLocation" x="1638" y="1106"/>
         </scene>
-        <!--Search-->
+        <!--Photo-->
         <scene sceneID="QTT-ei-tWQ">
             <objects>
-                <viewController title="Search" id="dBg-eI-2q5" userLabel="Search" sceneMemberID="viewController">
+                <viewController title="Photo" id="dBg-eI-2q5" customClass="ImagePickerViewController" customModule="TestWorkSiberian3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ej9-ZP-P4q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ngl-Eo-1co">
+                                <rect key="frame" x="20" y="130" width="374" height="273.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-Ze-yod">
+                                <rect key="frame" x="20" y="433" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Выбрать фото"/>
+                                <connections>
+                                    <action selector="showImagePicker:" destination="dBg-eI-2q5" eventType="touchUpInside" id="0Ei-N0-CSD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fqu-JF-n4o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ngl-Eo-1co" firstAttribute="leading" secondItem="fqu-JF-n4o" secondAttribute="leading" constant="20" id="8aF-Sr-0ge"/>
+                            <constraint firstItem="N9h-Ze-yod" firstAttribute="leading" secondItem="Ngl-Eo-1co" secondAttribute="leading" id="9TV-dF-0mt"/>
+                            <constraint firstItem="fqu-JF-n4o" firstAttribute="bottom" secondItem="Ngl-Eo-1co" secondAttribute="bottom" constant="408" id="ERh-ve-S6A"/>
+                            <constraint firstItem="N9h-Ze-yod" firstAttribute="top" secondItem="Ngl-Eo-1co" secondAttribute="bottom" constant="28" id="Gub-Wx-f3H"/>
+                            <constraint firstItem="Ngl-Eo-1co" firstAttribute="centerX" secondItem="fqu-JF-n4o" secondAttribute="centerX" id="cHm-SE-oxt"/>
+                            <constraint firstItem="N9h-Ze-yod" firstAttribute="trailing" secondItem="Ngl-Eo-1co" secondAttribute="trailing" id="nhA-WR-jWb"/>
+                            <constraint firstItem="Ngl-Eo-1co" firstAttribute="top" secondItem="fqu-JF-n4o" secondAttribute="top" constant="85" id="sPj-cN-HIi"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="0Hp-Kn-dMT"/>
+                    <tabBarItem key="tabBarItem" title="Photo" image="photo" catalog="system" selectedImage="photo" id="0Hp-Kn-dMT"/>
+                    <connections>
+                        <outlet property="imageView" destination="Ngl-Eo-1co" id="uKR-au-C5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tec-so-6lS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="394"/>
+            <point key="canvasLocation" x="1637.68115942029" y="393.75"/>
         </scene>
-        <!--Favorites-->
+        <!--SpeechToText-->
         <scene sceneID="E0X-Jz-Jyi">
             <objects>
-                <viewController title="Favorites" id="yiZ-dY-Gsc" customClass="SpeechToTextViewController" customModule="TestWorkSiberian3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SpeechToText" id="yiZ-dY-Gsc" customClass="SpeechToTextViewController" customModule="TestWorkSiberian3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="znf-LX-4Sn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажмите на кнопку и начинайте диктовку" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-jQ-wIW">
-                                <rect key="frame" x="21" y="115" width="373" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VPx-7G-qse">
-                                <rect key="frame" x="20" y="183" width="374" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH5-dK-apw">
-                                <rect key="frame" x="146" y="433" width="122" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Начать запись"/>
-                                <connections>
-                                    <action selector="recordButtonTapped:" destination="yiZ-dY-Gsc" eventType="touchUpInside" id="FXi-1g-gAQ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="a4J-DF-GRN">
+                                <rect key="frame" x="20" y="261.5" width="374" height="334"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажмите на кнопку и начинайте диктовку" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-jQ-wIW">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VPx-7G-qse">
+                                        <rect key="frame" x="0.0" y="63" width="374" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH5-dK-apw">
+                                        <rect key="frame" x="0.0" y="153" width="374" height="181"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Начать запись"/>
+                                        <connections>
+                                            <action selector="recordButtonTapped:" destination="yiZ-dY-Gsc" eventType="touchUpInside" id="FXi-1g-gAQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5hD-N8-vnm"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="VPx-7G-qse" firstAttribute="top" secondItem="BkV-jQ-wIW" secondAttribute="bottom" constant="45" id="0Tj-c7-cKK"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="bottom" secondItem="BkV-jQ-wIW" secondAttribute="bottom" constant="675" id="54l-Al-hJu"/>
-                            <constraint firstItem="BkV-jQ-wIW" firstAttribute="top" secondItem="5hD-N8-vnm" secondAttribute="top" constant="71" id="9gN-GA-0NR"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="bottom" secondItem="NH5-dK-apw" secondAttribute="bottom" constant="349" id="OYA-in-f2l"/>
-                            <constraint firstItem="NH5-dK-apw" firstAttribute="top" secondItem="VPx-7G-qse" secondAttribute="bottom" constant="50" id="TcV-Y4-H1v"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="trailing" secondItem="VPx-7G-qse" secondAttribute="trailing" constant="20" id="XmK-c3-iDg"/>
-                            <constraint firstItem="BkV-jQ-wIW" firstAttribute="leading" secondItem="5hD-N8-vnm" secondAttribute="leading" constant="21" id="Y0d-w8-ofn"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="trailing" secondItem="NH5-dK-apw" secondAttribute="trailing" constant="146" id="nx3-Eo-vuX"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="trailing" secondItem="BkV-jQ-wIW" secondAttribute="trailing" constant="20" id="pdW-0d-EXn"/>
-                            <constraint firstItem="VPx-7G-qse" firstAttribute="leading" secondItem="5hD-N8-vnm" secondAttribute="leading" constant="20" id="qiD-BG-xoV"/>
-                            <constraint firstItem="5hD-N8-vnm" firstAttribute="bottom" secondItem="VPx-7G-qse" secondAttribute="bottom" constant="430" id="sq2-yQ-QCY"/>
-                            <constraint firstItem="NH5-dK-apw" firstAttribute="leading" secondItem="5hD-N8-vnm" secondAttribute="leading" constant="146" id="wJd-Y6-ytE"/>
+                            <constraint firstItem="a4J-DF-GRN" firstAttribute="width" secondItem="znf-LX-4Sn" secondAttribute="width" multiplier="0.903382" id="S4f-8z-lPO"/>
+                            <constraint firstItem="a4J-DF-GRN" firstAttribute="centerX" secondItem="5hD-N8-vnm" secondAttribute="centerX" id="TYm-OW-TTE"/>
+                            <constraint firstItem="a4J-DF-GRN" firstAttribute="centerY" secondItem="5hD-N8-vnm" secondAttribute="centerY" id="V7s-6f-w60"/>
+                            <constraint firstItem="a4J-DF-GRN" firstAttribute="height" secondItem="znf-LX-4Sn" secondAttribute="height" multiplier="0.372768" id="Y3n-bI-fiM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="SpeechTotext" image="music.mic.circle" catalog="system" id="08G-Gm-9ji"/>
@@ -120,6 +142,8 @@
     </scenes>
     <resources>
         <image name="music.mic.circle" catalog="system" width="128" height="121"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
