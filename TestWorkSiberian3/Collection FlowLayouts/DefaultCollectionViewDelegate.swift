@@ -18,6 +18,9 @@ class DefaultCollectionViewDelegate: NSObject, CollectionViewSelectableItemDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         didSelectItem?(indexPath)
+        guard let vc = UIStoryboard(name: "DetailVC", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        let topvc = UIApplication.topViewController()
+        topvc?.navigationController?.pushViewController(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -29,4 +32,6 @@ class DefaultCollectionViewDelegate: NSObject, CollectionViewSelectableItemDeleg
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor = UIColor.white
     }
+    
+    
 }

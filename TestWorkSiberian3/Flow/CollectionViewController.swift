@@ -58,6 +58,7 @@ class CollectionViewController: UICollectionViewController {
         
         navigationItem.rightBarButtonItem?.image = selectedStyle.buttonImage
     }
+   
     
     @objc private func changeContentLayout() {
         let allCases = PresentationStyle.allCases

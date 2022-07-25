@@ -32,7 +32,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func update(title: String, image: UIImage) {
         cellImageView.image = image
-        dateTextLabel.text = title
+        dateTextLabel.text = "01-january-2022"
     }
     
     private func updateContentStyle() {
