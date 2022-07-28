@@ -21,7 +21,6 @@ class CollectionViewController: UICollectionViewController {
             }
         }
     }
-    
     private var selectedStyle: PresentationStyle = .table {
         didSet { updatePresentationStyle() }
     }
@@ -34,6 +33,9 @@ class CollectionViewController: UICollectionViewController {
         result.values.forEach {
             $0.didSelectItem = { _ in
                 print("Item selected")
+                guard let vc = UIStoryboard(name: "DetailVC", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+                let topvc = UIApplication.topViewController()
+                topvc?.navigationController?.pushViewController(vc, animated: true)
             }
         }
         return result
@@ -43,29 +45,25 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.register(CollectionViewCell.nib, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
-        collectionView.contentInset = .zero
         updatePresentationStyle()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: selectedStyle.buttonImage, style: .plain, target: self, action: #selector(changeContentLayout))
     }
     
     private func updatePresentationStyle() {
+        collectionView.register(CollectionViewCell.nib, forCellWithReuseIdentifier: CollectionViewCell.reuseID)
+        collectionView.contentInset = .zero
         collectionView.delegate = styleDelegates[selectedStyle]
         collectionView.performBatchUpdates({
             collectionView.reloadData()
         }, completion: nil)
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: selectedStyle.buttonImage, style: .plain, target: self, action: #selector(changeContentLayout))
         navigationItem.rightBarButtonItem?.image = selectedStyle.buttonImage
     }
-   
     
     @objc private func changeContentLayout() {
         let allCases = PresentationStyle.allCases
         guard let index = allCases.firstIndex(of: selectedStyle) else { return }
         let nextIndex = (index + 1) % allCases.count
         selectedStyle = allCases[nextIndex]
-        
     }
 }
 

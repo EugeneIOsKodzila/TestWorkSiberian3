@@ -90,15 +90,11 @@
 		6E3410C5288ED4C800A76885 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				6EFF968828924CC300F2B086 /* CollectionView */,
+				6EFF968728924CB600F2B086 /* PickerImage */,
+				6EFF968628924C9A00F2B086 /* SpeechToText */,
 				6E7E2599287EFA5100F15A9D /* ViewController.swift */,
 				6E7E259B287EFA5100F15A9D /* Main.storyboard */,
-				6E19BEEB288A827D003132DA /* DetailViewController.swift */,
-				6E19BEE9288A8231003132DA /* DetailVC.storyboard */,
-				6E9ABD3128851423006DC75D /* CollectionViewCell.swift */,
-				6E9ABD372885254D006DC75D /* CollectionViewController.swift */,
-				6E9ABD3228851423006DC75D /* CollectionViewCell.xib */,
-				6EFD049928814CD500452C9D /* ImagePickerViewController.swift */,
-				6E7E25AE287F161A00F15A9D /* SpeechToTextViewController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -161,6 +157,34 @@
 				6ED815CD288669B000A07C2E /* Fruit.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		6EFF968628924C9A00F2B086 /* SpeechToText */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E25AE287F161A00F15A9D /* SpeechToTextViewController.swift */,
+			);
+			path = SpeechToText;
+			sourceTree = "<group>";
+		};
+		6EFF968728924CB600F2B086 /* PickerImage */ = {
+			isa = PBXGroup;
+			children = (
+				6EFD049928814CD500452C9D /* ImagePickerViewController.swift */,
+			);
+			path = PickerImage;
+			sourceTree = "<group>";
+		};
+		6EFF968828924CC300F2B086 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6E19BEEB288A827D003132DA /* DetailViewController.swift */,
+				6E19BEE9288A8231003132DA /* DetailVC.storyboard */,
+				6E9ABD3128851423006DC75D /* CollectionViewCell.swift */,
+				6E9ABD372885254D006DC75D /* CollectionViewController.swift */,
+				6E9ABD3228851423006DC75D /* CollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
